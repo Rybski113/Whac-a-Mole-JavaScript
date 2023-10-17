@@ -58,8 +58,11 @@ function popOut() {
  function whack(e) {
     score++
     this.style.backgroundImage = 'url(img/yoda2.png)'
+    this.style.pointerEvents = 'none'
     setTimeout(() => {
         this.style.backgroundImage = 'url(img/yoda1.png)'
+        this.style.pointerEvents = 'all'
     }, 800)
- }
+    scoreBoard.textContent = score
+}   
  moles.forEach(mole => mole.addEventListener('click', whack))
