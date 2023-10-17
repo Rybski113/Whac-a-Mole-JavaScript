@@ -54,3 +54,12 @@ function popOut() {
  }
 
  startButton.addEventListener('click', startGame )
+
+ function whack(e) {
+    score++
+    this.style.backgroundImage = 'url(img/yoda2.png)'
+    setTimeout(() => {
+        this.style.backgroundImage = 'url(img/yoda1.png)'
+    }, 800)
+ }
+ moles.forEach(mole => mole.addEventListener('click', whack))
